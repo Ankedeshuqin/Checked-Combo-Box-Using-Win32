@@ -41,7 +41,6 @@ LRESULT CALLBACK WndProc(HWND hwnd,UINT uMsg,WPARAM wParam,LPARAM lParam){
         cbi.cbSize=sizeof(COMBOBOXINFO);
         SendMessage(hwndCheckedCB,CB_GETCOMBOBOXINFO,0,(LPARAM)&cbi);
         hwndLBCheckedCB=cbi.hwndList;
-        SetWindowText(cbi.hwndItem,L"Checked combo box");
         DefLBProc=(WNDPROC)GetWindowLong(hwndLBCheckedCB,GWL_WNDPROC);
         SetWindowLong(hwndLBCheckedCB,GWL_WNDPROC,(LONG)LBCheckedCBProc);
 
